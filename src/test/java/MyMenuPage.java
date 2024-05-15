@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 
+
 public class MyMenuPage extends PageBase {
 
     public MyMenuPage(WebDriver driver) {

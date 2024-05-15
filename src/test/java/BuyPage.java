@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 
+
 public class BuyPage extends PageBase {
 
     public BuyPage(WebDriver driver) {

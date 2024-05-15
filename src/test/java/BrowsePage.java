@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 
+
 public class BrowsePage extends PageBase {
 
     public BrowsePage(WebDriver driver) {

@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 
+
 public class MorePage extends PageBase {
 
     public MorePage(WebDriver driver) {

@@ -1,6 +1,7 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 
+
 public class ProfilePage extends PageBase {
 
     protected By editProfileButton = By.xpath("//ul//li//a[@href=\"/profile/edit\"]");

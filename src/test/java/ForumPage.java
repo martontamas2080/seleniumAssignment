@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 
+
 public class ForumPage extends PageBase {
 
     public ForumPage(WebDriver driver) {
