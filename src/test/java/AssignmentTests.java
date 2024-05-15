@@ -80,8 +80,7 @@ public class AssignmentTests {
         Assert.assertTrue(bodyText.contains("LOG OUT"));
 
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-
-        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        jsExecutor.executeScript("window.scroll(0, 250)");
     }
 
 
