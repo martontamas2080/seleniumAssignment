@@ -92,7 +92,6 @@ public class AssignmentTests {
 
         String bodyText = mainPage.getBodyText();
         Assert.assertTrue(bodyText.contains("LOG OUT"));
-        Assert.assertTrue(bodyText.contains("LOG OUT"));
 
         ProfilePage profile = mainPage.goProfilePage();
         String currentUrl = driver.getCurrentUrl();
