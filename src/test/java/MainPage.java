@@ -3,7 +3,6 @@ import org.openqa.selenium.By;
 
 class MainPage extends PageBase {
 
-    private By footerBy = By.className("//footer[@role=\"contentinfo\"]");
     private By searchBar = By.xpath("//input[@type=\"text\"]");
     private By searchButton = By.xpath("//input[@value=\"Go\"]");
     private By browseMenuButton = By.xpath("//ul//a[@href=\"/browse\"]");
@@ -14,7 +13,6 @@ class MainPage extends PageBase {
     private By myMenuButton = By.xpath("//ul//a[@href=\"/mymenu\"]");
     private By profileButton = By.xpath("//ul//li//a[@href=\"/profile\"]");
 
-
     
     public MainPage(WebDriver driver) {
         super(driver);
@@ -22,11 +20,6 @@ class MainPage extends PageBase {
 
         this.consentCookies();
     }    
-
-    
-    public String getFooterText() {
-        return this.waitAndReturnElement(footerBy).getText();
-    }
     
     public SearchResultPage search(String searchQuery) {
 

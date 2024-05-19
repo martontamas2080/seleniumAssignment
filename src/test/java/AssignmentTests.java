@@ -34,15 +34,15 @@ public class AssignmentTests {
     public void setup()  throws MalformedURLException  {
         ChromeOptions options = new ChromeOptions();
 
+
+        options.addArguments("--incognito");
         options.addArguments("--disable-notifications");
         options.addArguments("--no-sandbox");
+        options.addArguments("--start-maximized");
 
         configFile = new ConfigReader("config.properties");
         
         driver = new RemoteWebDriver(new URL("http://selenium:4444/wd/hub"), options);
-
-        driver.manage().window().maximize();
-
     }
 
     @Test
@@ -91,6 +91,7 @@ public class AssignmentTests {
         loginWithCredentials(mainPage);
 
         String bodyText = mainPage.getBodyText();
+        Assert.assertTrue(bodyText.contains("LOG OUT"));
         Assert.assertTrue(bodyText.contains("LOG OUT"));
 
         ProfilePage profile = mainPage.goProfilePage();
@@ -188,7 +189,52 @@ public class AssignmentTests {
         bodyText = mainPage.getBodyText();
         Assert.assertTrue(bodyText.contains("LOG IN"));
     }
- 
+
+
+    @Test 
+    public void mainPageNavigateBuyTest() {
+        MainPage mainPage = new MainPage(this.driver);
+
+        BuyPage buyPage = mainPage.goBuyPage();
+        Assert.assertEquals(buyPage.getPageTitle(),driver.getTitle()); 
+    }
+
+
+    @Test 
+    public void mainPageNavigateMoreTest() {
+        MainPage mainPage = new MainPage(this.driver);
+
+        MorePage morePage = mainPage.goMorePage();
+        Assert.assertEquals(morePage.getPageTitle(),driver.getTitle()); 
+    }
+
+
+    @Test 
+    public void mainPageNavigateMySetsTest() {
+        MainPage mainPage = new MainPage(this.driver);
+
+        MySetsPage mySetsPage = mainPage.goMySetsPage();
+        Assert.assertEquals(mySetsPage.getPageTitle(),driver.getTitle()); 
+    }
+
+
+    @Test 
+    public void mainPageNavigateMyMenuTest() {
+        MainPage mainPage = new MainPage(this.driver);
+
+        MyMenuPage myMenuPage = mainPage.goMyMenuPage();
+        Assert.assertEquals(myMenuPage.getPageTitle(),driver.getTitle()); 
+    }
+
+
+    @Test 
+    public void mainPageNavigateForumTest() {
+        MainPage mainPage = new MainPage(this.driver);
+
+        ForumPage forumPage = mainPage.goForumPage();
+        Assert.assertEquals(forumPage.getPageTitle(),driver.getTitle()); 
+    }
+
     
     @After
     public void close() {
